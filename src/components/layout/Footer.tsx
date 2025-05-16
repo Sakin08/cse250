@@ -69,27 +69,27 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">
-                  Bali, Indonesia
+                  জাফলং, সিলেট 
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">
-                  Paris, France
+                  সাদা পাথর, সিলেট 
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">
-                  Swiss Alps, Switzerland
+                  মালনি ছড়া চা বাগান, সিলেট 
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">
-                  Serengeti, Tanzania
+                  সাজেক, বান্দরবান
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">
-                  Caribbean Islands
+                  সেন্টমারটীন
                 </a>
               </li>
             </ul>
@@ -101,22 +101,22 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-blue-400 mt-0.5" />
-                <span className="text-gray-300">123 Adventure St, Travelville, TX 75001</span>
+                <span className="text-gray-300">জিন্দাবাজার, সিলেট </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-300">+1 (555) 234-5678</span>
+                <span className="text-gray-300">01823024067</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-300">info@travelvista.com</span>
+                <span className="text-gray-300">info@travel.com</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; {currentYear} TravelVista. All rights reserved.</p>
+          <p>&copy; {currentYear} Travel.com All rights reserved.</p>
           <div className="mt-2 text-sm space-x-4">
             <a href="#" className="hover:text-blue-400 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-blue-400 transition-colors">Terms of Service</a>
