@@ -102,7 +102,7 @@ const BookingPage: React.FC = () => {
               </div>
               <h1 className="text-2xl font-bold text-gray-900 mb-2">Booking Confirmed!</h1>
               <p className="text-gray-600">
-                Thank you for booking with TravelVista. Your trip is now confirmed.
+                Thank you for booking with ভ্রমণবিলাস(BhramonBilash). Your trip is now confirmed.
               </p>
             </div>
             

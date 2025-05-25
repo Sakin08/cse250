@@ -375,13 +375,13 @@ const PackageDetailPage: React.FC = () => {
                   <div className="border-t border-gray-200 pt-4 mb-6">
                     <div className="flex justify-between mb-2">
                       <span className="text-gray-600">
-                        ${travelPackage.price.toLocaleString()} x {guestCount} {guestCount === 1 ? 'person' : 'people'}
+                        ৳ {travelPackage.price.toLocaleString()} x {guestCount} {guestCount === 1 ? 'person' : 'people'}
                       </span>
-                      <span>${(travelPackage.price * guestCount).toLocaleString()}</span>
+                      <span>৳ {(travelPackage.price * guestCount).toLocaleString()}</span>
                     </div>
                     <div className="flex justify-between font-semibold text-lg">
                       <span>Total</span>
-                      <span>${(travelPackage.price * guestCount).toLocaleString()}</span>
+                      <span>৳ {(travelPackage.price * guestCount).toLocaleString()}</span>
                     </div>
                   </div>
                   

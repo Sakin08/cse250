@@ -12,7 +12,7 @@ const HomePage: React.FC = () => {
   
   // Update document title
   useEffect(() => {
-    document.title = 'TravelVista | Discover Your Next Adventure';
+    document.title = 'ভ্রমণবিলাস (BhramonBilash)-"Luxury of Travel"e';
   }, []);
 
   const handleSearch = (e: React.FormEvent) => {
@@ -54,7 +54,7 @@ const HomePage: React.FC = () => {
         <div className="relative h-full flex items-center justify-center px-4">
           <div className="hero-content text-center text-white max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Discover the World's Most Amazing Places
+              🇧🇩 Discover Bangladesh’s Most Amazing Places
             </h1>
             <p className="text-xl md:text-2xl mb-8">
               Unforgettable travel experiences curated just for you
@@ -133,7 +133,7 @@ const HomePage: React.FC = () => {
               </div>
               <h3 className="text-xl font-bold mb-3">Handpicked Destinations</h3>
               <p className="text-gray-600">
-                We carefully select the most breathtaking and unique destinations around the world to ensure an unforgettable experience.
+                We carefully select the most breathtaking and unique destinations around Bangladesh to ensure an unforgettable experience.
               </p>
             </div>
 
@@ -174,25 +174,25 @@ const HomePage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <TestimonialCard 
-              name="Sarah Johnson"
-              avatar="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              name="Ashik"
+              avatar="https://i.postimg.cc/vTJLqPQ2/ashik.jpg"
               rating={5}
-              text="My trip to Bali was absolutely magical! The TravelVista team took care of every detail, and I didn't have to worry about a thing. The accommodations were luxurious, and the guided tours were informative and fun."
-              destination="Bali, Indonesia"
+              text="সেন্ট মার্টিন দ্বীপে আমার ভ্রমণ ছিল একেবারেই জাদুকরী! ভ্রমণবিলাস টিম প্রতিটি বিষয়ে যত্ন নিয়েছে, যাতে আমি সম্পূর্ণভাবে আরাম করে উপভোগ করতে পারি। সমুদ্রতীরবর্তী আবাসন ছিল আরামদায়ক এবং সুন্দর, আর গাইডেড ট্যুরগুলো পুরো অভিজ্ঞতাকে অবিস্মরণীয় করে তুলেছে।"
+              destination="সেন্টমার্টির দ্বীপ, টেকনাফ"
             />
             <TestimonialCard 
-              name="Michael Rodriguez"
-              avatar="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              name="Limon Hasan"
+              avatar="https://i.postimg.cc/T1z1cJnn/limon.jpg"
               rating={4}
-              text="The European Cultural Tour exceeded my expectations. Our guide was incredibly knowledgeable, and the itinerary was perfectly balanced between structured activities and free time to explore on our own."
-              destination="Paris, Rome, Barcelona"
+              text="সাজেক ভ্রমণ ছিল জীবনের এক অবিস্মরণীয় অভিজ্ঞতা! চারদিকে সবুজ পাহাড়, মেঘে ঢেকে থাকা রাস্তা আর ঠান্ডা বাতাস মনকে যেন অন্য এক জগতে নিয়ে যায়।ভ্রমণবিলাস টিম প্রতিটি দিক থেকে চমৎকারভাবে সব আয়োজন করেছিল—থাকার জায়গা, খাবার, গাইড সবকিছুই ছিল নিখুঁত। "
+              destination="সাজেক, বান্দরবান "
             />
             <TestimonialCard 
-              name="Emily Chen"
-              avatar="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              name="Md Sakin"
+              avatar="https://i.postimg.cc/26fYjjnF/sakin.jpg"
               rating={5}
-              text="The African Safari was the trip of a lifetime! We saw all the Big Five and so much more. The luxury tented camps were amazing - it felt like glamping in the heart of the wilderness. Highly recommend!"
-              destination="Serengeti, Tanzania"
+              text="জাফলং ভ্রমণ ছিল এক অসাধারণ অভিজ্ঞতা! স্বচ্ছ নদীর পানি, পাথরের রাজ্য আর দূরের মেঘে ঢাকা খাসিয়া পাহাড়—সব মিলিয়ে এক স্বর্গীয় অনুভূতি। নদীর পাড়ে পাথরের ওপর বসে সময় কাটানো, নৌকাভ্রমণ আর ঝরনার ধারে ছবি তোলা—সব কিছুই ছিল মনের মতো। ট্রাভেল টিমের সেবা ছিল খুবই আন্তরিক ও পেশাদার। তাঁরা ভ্রমণকে সহজ ও উপভোগ্য করে তুলেছে। প্রকৃতির সান্নিধ্যে কিছু সময় কাটানোর জন্য জাফলং নিঃসন্দেহে এক দারুণ গন্তব্য।"
+              destination="জাফলং, সিলেট "
             />
           </div>
         </div>

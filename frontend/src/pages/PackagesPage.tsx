@@ -22,7 +22,7 @@ const PackagesPage: React.FC = () => {
 
   // Update document title
   useEffect(() => {
-    document.title = 'Travel Packages | TravelVista';
+    document.title = 'Travel Packages | ভ্রমণবিলাস (BhramonBilash)';
   }, []);
 
   // Effect to perform search based on URL params and filters

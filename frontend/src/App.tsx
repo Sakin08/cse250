@@ -15,6 +15,8 @@ import BookingPage from './pages/BookingPage';
 import NotFoundPage from './pages/NotFoundPage';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import AdminRoute from './components/auth/AdminRoute';
+import AboutUs from './pages/AboutUs'; 
+
 
 
 function App() {
@@ -28,6 +30,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/packages" element={<PackagesPage />} />
+                <Route path="/about" element={<AboutUs />} />
                 <Route path="/packages/:id" element={<PackageDetailPage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/signup" element={<SignupPage />} />
@@ -47,6 +50,7 @@ function App() {
                   </AdminRoute>
                 } />
                 <Route path="*" element={<NotFoundPage />} />
+                
               </Routes>
             </main>
             <Footer />
