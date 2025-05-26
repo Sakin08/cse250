@@ -219,29 +219,37 @@ const BookingPage: React.FC = () => {
                     <div className="grid grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="expiryDate" className="block text-sm font-medium text-gray-700 mb-1">
-                          Expiry Date
+                          Expiry Date (MM/YY)
                         </label>
-                        <input
-                          type="text"
-                          id="expiryDate"
-                          name="expiryDate"
-                          value={formData.expiryDate}
-                          onChange={handleInputChange}
-                          placeholder="MM/YY"
-                          className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                          required
-                        />
+                        <div className="relative">
+                          <input
+                            type="text"
+                            id="expiryDate"
+                            name="expiryDate"
+                            value={formData.expiryDate}
+                            onChange={handleInputChange}
+                            placeholder="MM/YY"
+                            maxLength={5}
+                            className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                            required
+                          />
+                          <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+                            <Calendar className="w-5 h-5 text-gray-400" />
+                          </div>
+                        </div>
                       </div>
+                      
                       <div>
                         <label htmlFor="cvv" className="block text-sm font-medium text-gray-700 mb-1">
                           CVV
                         </label>
                         <input
-                          type="text"
+                          type="password"
                           id="cvv"
                           name="cvv"
                           value={formData.cvv}
                           onChange={handleInputChange}
+                          maxLength={4}
                           placeholder="123"
                           className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
                           required
@@ -253,11 +261,10 @@ const BookingPage: React.FC = () => {
                   {/* Contact Information */}
                   <div className="mb-8">
                     <h2 className="text-lg font-semibold mb-4 pb-2 border-b">Contact Information</h2>
-                    
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                          Email
+                          Email Address
                         </label>
                         <div className="relative">
                           <input
@@ -284,6 +291,7 @@ const BookingPage: React.FC = () => {
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
+                          placeholder="+1 555 123 4567"
                           className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
                         />
                       </div>
@@ -292,87 +300,90 @@ const BookingPage: React.FC = () => {
                   
                   {/* Special Requests */}
                   <div className="mb-8">
-                    <label htmlFor="specialRequests" className="block text-sm font-medium text-gray-700 mb-1">
-                      Special Requests (optional)
+                    <label htmlFor="specialRequests" className="block text-sm font-medium text-gray-700 mb-2">
+                      Special Requests
                     </label>
                     <textarea
                       id="specialRequests"
                       name="specialRequests"
-                      rows={4}
+                      rows={3}
                       value={formData.specialRequests}
                       onChange={handleInputChange}
-                      placeholder="Any special requirements or preferences..."
                       className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                      placeholder="Any special requests or requirements?"
                     />
                   </div>
                   
-                  <div className="flex justify-end">
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:bg-blue-400 disabled:cursor-not-allowed"
-                    >
-                      {isSubmitting ? (
-                        <span className="flex items-center">
-                          <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                          </svg>
-                          Processing...
-                        </span>
-                      ) : (
-                        'Complete Booking'
-                      )}
-                    </button>
-                  </div>
+                  {/* Submit Button */}
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`w-full flex justify-center items-center px-6 py-3 rounded-lg text-white font-semibold ${
+                      isSubmitting ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+                    } transition-colors`}
+                  >
+                    {isSubmitting && (
+                      <svg
+                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                        ></path>
+                      </svg>
+                    )}
+                    {isSubmitting ? 'Processing...' : 'Confirm Booking'}
+                  </button>
                 </form>
               </div>
             </div>
             
             {/* Booking Summary */}
-            <div>
-              <div className="bg-white rounded-xl shadow-md p-6 sticky top-24">
-                <h2 className="text-lg font-semibold mb-4 pb-2 border-b">Booking Summary</h2>
-                
-                <div className="mb-4">
-                  <h3 className="font-medium mb-2">{travelPackage.title}</h3>
-                  <p className="text-gray-600 text-sm mb-3">{travelPackage.location}</p>
-                  
-                  <div className="flex items-center text-sm text-gray-600 mb-2">
-                    <Calendar className="w-4 h-4 mr-2" />
-                    <span>{format(new Date(bookingDetails.date), 'MMMM dd, yyyy')}</span>
-                  </div>
-                  
-                  <div className="flex items-center text-sm text-gray-600">
-                    <Users className="w-4 h-4 mr-2" />
-                    <span>{bookingDetails.guests} {bookingDetails.guests === 1 ? 'guest' : 'guests'}</span>
-                  </div>
-                </div>
-                
-                <div className="border-t border-gray-200 pt-4 mb-4">
-                  <div className="flex justify-between mb-2 text-sm">
-                    <span className="text-gray-600">
-                      ${travelPackage.price.toLocaleString()} x {bookingDetails.guests} {bookingDetails.guests === 1 ? 'person' : 'people'}
-                    </span>
-                    <span>${bookingDetails.totalPrice.toLocaleString()}</span>
-                  </div>
-                  
-                  <div className="flex justify-between font-semibold">
-                    <span>Total</span>
-                    <span>${bookingDetails.totalPrice.toLocaleString()}</span>
-                  </div>
-                </div>
-                
-                <div className="text-sm text-gray-500">
-                  <p className="mb-2">Cancellation Policy:</p>
-                  <ul className="list-disc list-inside space-y-1 pl-1">
-                    <li>Free cancellation up to 30 days before the trip</li>
-                    <li>50% refund between 15-29 days before the trip</li>
-                    <li>No refund for cancellations less than 15 days before the trip</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            <aside className="bg-white rounded-xl shadow-md p-6">
+              <h2 className="font-semibold text-lg mb-4 border-b pb-2">Booking Summary</h2>
+              <ul className="space-y-3">
+                <li className="flex items-center space-x-3">
+                  <Users className="w-5 h-5 text-blue-600" />
+                  <span><strong>Guests:</strong> {bookingDetails.guests}</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <Calendar className="w-5 h-5 text-blue-600" />
+                  <span>
+                    <strong>Date:</strong> {format(new Date(bookingDetails.date), 'MMMM dd, yyyy')}
+                  </span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <Check className="w-5 h-5 text-green-600" />
+                  <span>
+                    <strong>Package:</strong> {travelPackage.title}
+                  </span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <Check className="w-5 h-5 text-green-600" />
+                  <span>
+                    <strong>Location:</strong> {travelPackage.location}
+                  </span>
+                </li>
+                <li className="flex items-center space-x-3 border-t pt-4 mt-4">
+                  <strong className="text-lg">Total Price:</strong>
+                  <span className="ml-auto text-lg font-semibold text-gray-800">
+                    ${bookingDetails.totalPrice.toLocaleString()}
+                  </span>
+                </li>
+              </ul>
+            </aside>
           </div>
         </div>
       </div>
